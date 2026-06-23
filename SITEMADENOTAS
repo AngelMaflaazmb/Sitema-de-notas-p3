@@ -1,0 +1,26 @@
+#Sistema de notas
+while True:
+    nombre = input("Nombre: ")
+    
+    nota1 = float(input("Nota 1: "))
+    nota2 = float(input("Nota 2: "))
+    nota3 = float(input("Nota 3: "))
+
+    if (0 <= nota1 <= 10) and (0 <= nota2 <= 10) and (0 <= nota3 <= 10):
+        
+        promedio = (nota1 + nota2 + nota3) / 3
+
+        print("Nombre:", nombre)
+        print("Promedio:", promedio)
+
+        if promedio >= 7:
+            print("Estado: APROBADO")
+        else:
+            print("Estado: REPROBADO")
+
+    else:
+        print("Error: Las notas deben estar entre 0 y 10")
+
+    repetir = input("¿Quieres ingresar otro estudiante? (si/no): ")
+    if repetir == "no":
+        break
