@@ -1,22 +1,42 @@
-# Sistema de notas
+# Sistema de notas p3
+estudiantes = {
+    "1": "Angel Mafla",
+    "2": "Karolina Flores",
+    "3": "Zahid Bolaños"
+}
 
-nombre = input("Nombre: ")
+while True:
+    for numero_lista, nombre in estudiantes.items():
+        print("Nombre:", nombre)
+        print("Número de lista:", numero_lista)
 
-nota1 = float(input("Nota 1: "))
-nota2 = float(input("Nota 2: "))
-nota3 = float(input("Nota 3: "))
+        notas = []
 
-if (0 <= nota1 <= 10) and (0 <= nota2 <= 10) and (0 <= nota3 <= 10):
+        nota1 = float(input("Nota 1: "))
+        nota2 = float(input("Nota 2: "))
+        nota3 = float(input("Nota 3: "))
+        nota4 = float(input("Nota 4: "))
+        nota5 = float(input("Nota 5: "))
+        
 
-    promedio = (nota1 + nota2 + nota3) / 3
+        if (0 <= nota1 <= 10) and (0 <= nota2 <= 10) and (0 <= nota3 <= 10) and (0 <= nota4 <= 10) and (0 <= nota5 <= 10):
+            
+            notas = notas + [nota1, nota2, nota3, nota4, nota5]
 
-    print("Nombre:", nombre)
-    print("Promedio:", promedio)
+            promedio = sum(notas) / len(notas)
 
-    if promedio >= 7:
-        print("Estado: APROBADO")
-    else:
-        print("Estado: REPROBADO")
+            print("Promedio:", promedio)
 
-else:
-    print("Error: Las notas deben estar entre 0 y 10")
+            if promedio >= 7:
+                print("Estado: APROBADO")
+            else:
+                print("Estado: REPROBADO")
+
+        else:
+            print("Error: Las notas deben estar entre 0 y 10")
+
+        print("-----")
+
+    repetir = input("¿Quieres volver a ingresar notas? (si/no): ")
+    if repetir == "no":
+        break
